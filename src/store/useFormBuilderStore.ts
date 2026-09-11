@@ -7,7 +7,7 @@ interface FormBuilderState{
     selectedFieldId: string| null;
     addField: (type: FieldType) => void;
     updateField: (id: string, updatedField: Partial<FormField>) => void;
-    removeField: (activateId: string, overId: string) => void;
+    removeField: (activateId: string) => void;
     reorderFields: (activeId: string, overId: string) => void;
     selectField: (id: string | null)=> void;
 }
