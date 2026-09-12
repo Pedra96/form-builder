@@ -26,8 +26,9 @@ export function SortableFieldCard({field}: Props){
 
     const style = {
         transform: CSS.Transform.toString(transform),
-        transition,
-        opacity: isDragging ? 0.4 : 1
+        transition: isDragging ? undefined : transition,
+        opacity: isDragging ? 0.5 : 1,
+        zIndex: isDragging ? 999 : 1
     };
 
     return(
@@ -35,7 +36,7 @@ export function SortableFieldCard({field}: Props){
         ref= {setNodeRef}
         style= {style}
         onClick={()=> selectField(field.id)}
-        className={`group relative p-4 rounded-lg border transition cursor-pointer bg-slate-800 ${
+        className={`group relative p-4 rounded-lg border bg-slate-800 ${
             isSelected
             ? 'border-blue-500 ring-2 ring-blue-500/20 shadow-lg'
             : 'border-slate-700 hover:border-slate-600'
